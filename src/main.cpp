@@ -21,6 +21,12 @@ int main(){
     // Init
     bool continueMenu = true;
     int menuInput = 0;
+    int input = 0;
+    bool useSet = false;
+
+    // Init the List
+    List numList = List(); 
+    Set numSet = Set();
 
     // Display the Menu
     cout << endl << "Would you like to use a List or Set?" << endl;
@@ -36,9 +42,8 @@ int main(){
         cin.ignore(30000, '\n');            
     }
 
-    // Init the List
     // If input is 1, use a List, otherwise it's 2 and use a Set
-    List numList = menuInput == 1 ? List() : Set();
+    useSet = menuInput == 2;
 
     // While the system should continue running
     while(continueMenu)
@@ -63,15 +68,17 @@ int main(){
         switch(menuInput) 
         {
             case 1: // Insert a Value
-                numList.insert(getInputValue());
+                input = getInputValue();
+                useSet ? numSet.insert(input) : numList.insert(input);
                 break;
 
             case 2: // Remove a Value
-                numList.remove(getInputValue());
+                input = getInputValue();
+                useSet ? numSet.remove(input) : numList.remove(input);
                 break;
 
             case 3: // Print the List
-                numList.printList();
+                useSet ? numSet.printList() : numList.printList();
                 break;
 
             case 4: // Quit
