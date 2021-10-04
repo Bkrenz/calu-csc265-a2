@@ -20,4 +20,6 @@ void Set::insert(int data) {
         // If it does not, call List::insert(data);
         // If it does exist, do nothing
 
+    List::insert(data);
+
 }

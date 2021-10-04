@@ -9,12 +9,14 @@
  */
 
 #include "list.h"
+#include <iostream>
 
 
 List::List() {
     // Initialize the array to size 2
-    array = new int[2];
-    arrayLength = 2;
+    arrayLength = 0;
+    arraySize = 2;
+    array = new int[arraySize];
 }
 
 
@@ -65,6 +67,8 @@ void List::printList() const{
     // For each element in the array
         // Print the element
         // Print an endl;
+    for (int i = 0; i < this->arrayLength; i++)
+        std::cout << this->array[i] << std::endl;
 
 }
 
