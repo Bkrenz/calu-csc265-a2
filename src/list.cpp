@@ -13,7 +13,6 @@
 
 
 List::List() {
-    // Initialize the array to size 2
     arrayLength = 0;
     arraySize = 2;
     array = new int[arraySize];
@@ -21,7 +20,6 @@ List::List() {
 
 
 List::~List(){
-    // Delete the array
     delete [] array;
 }
 
@@ -55,18 +53,36 @@ void List::insert(int data){
 
 void List::remove(int data){
 
-    // Check if the data is in the list
-        // If it is, remove the first instance and shift all data to the left
-        // Careful with nulls and shifting data
+    int i=0;
+    
+    // While the current index does not equal the input data and we have elements left in the list
+    for ( i; this->array[i] != data && i < arrayLength; i++);
+
+    // Check if we reached the end of the list
+    if ( i >= arrayLength )
+        return;
+
+    // The element at index equals the data
+    arrayLength--;
+    while(i < arrayLength)
+    {
+        this->array[i] = this->array[i+1];
+        i++;
+    }
 
 }
 
 
+int List::getLength() const {return this->arrayLength;}
+
+
 void List::printList() const{
 
-    // For each element in the array
-        // Print the element
-        // Print an endl;
+    // If the list is empty, print that.
+    if (this->arrayLength == 0)
+        std::cout << "Empty List" << std::endl;
+
+    // Print each element on its own line
     for (int i = 0; i < this->arrayLength; i++)
         std::cout << this->array[i] << std::endl;
 

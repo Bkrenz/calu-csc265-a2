@@ -17,6 +17,14 @@ class Set : public List {
 
     public:
         Set();
+
+        /**
+         *  void insert(int data)
+         *      description:
+         *          inserts the input data into the list if an equivalent 
+         *          piece of data does not already exist
+         *  
+         */
         void insert(int data);
 
 };

@@ -20,6 +20,10 @@ void Set::insert(int data) {
         // If it does not, call List::insert(data);
         // If it does exist, do nothing
 
+    for (int i = 0; i < List::getLength(); i++)
+        if (this->array[i] == data)
+            return;
+
     List::insert(data);
 
 }

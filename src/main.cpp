@@ -49,7 +49,7 @@ int main(){
     while(continueMenu)
     {
         // Display the Menu
-        cout << endl << endl;
+        cout << endl << endl << "Menu:" << endl;
         cout << "1. Insert a Value" << endl;
         cout << "2. Remove a Value" << endl;
         cout << "3. Print the List" << endl;
@@ -69,15 +69,18 @@ int main(){
         {
             case 1: // Insert a Value
                 input = getInputValue();
+                cout << endl << "Inserting value " << input << " into the list..." << endl;
                 useSet ? numSet.insert(input) : numList.insert(input);
                 break;
 
             case 2: // Remove a Value
                 input = getInputValue();
+                cout << endl << "Removing value " << input << " from the list..." << endl;
                 useSet ? numSet.remove(input) : numList.remove(input);
                 break;
 
             case 3: // Print the List
+                cout << endl << "Printing the list..." << endl;
                 useSet ? numSet.printList() : numList.printList();
                 break;
 
@@ -95,10 +98,22 @@ int main(){
     return 0;
 }
 
-
+/**
+ *  getInputValue() 
+ *      Description: Gets an input integer from the user
+ *      Precondition: none
+ *      Returns: an integer
+ */
 int getInputValue(){
     int value = 0;
 
+    cout << "Please input an integer: ";
+    while(!(cin >> value) || cin.peek() != '\n')
+    {
+        cout << "Please input an integer: ";
+        cin.clear();
+        cin.ignore(30000, '\n');            
+    }
 
     return value;
 }
