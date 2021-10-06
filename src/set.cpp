@@ -16,14 +16,12 @@ Set::Set(){
 
 void Set::insert(int data) {
 
-    // Check if the data already exists
-        // If it does not, call List::insert(data);
-        // If it does exist, do nothing
-
+    // Check if the data exists in the array
     for (int i = 0; i < List::getLength(); i++)
         if (this->array[i] == data)
             return;
 
+    // Insert it
     List::insert(data);
 
 }
