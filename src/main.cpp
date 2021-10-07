@@ -9,7 +9,6 @@
  */
 
 #include <iostream>
-#include "list.h"
 #include "set.h"
 
 using namespace std;
