@@ -37,7 +37,7 @@ class List {
     public:
         List();
         ~List();
-        void insert(const int data);
+        virtual void insert(const int data);
         void remove(const int data);
         void printList() const;
         int getLength() const;
@@ -63,7 +63,7 @@ class Set : public List {
          *          piece of data does not already exist
          *  
          */
-        void insert(int data);
+        virtual void insert(int data);
 
 };
 
