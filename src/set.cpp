@@ -4,7 +4,7 @@
  * Author: Austin Pringle
  * Author: Anthony Stepich
  * 
- * Assignment 2 for CSC 265.
+ * Assignment 3 for CSC 265.
  * 
  */
 
